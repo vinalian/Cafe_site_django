@@ -1,0 +1,12 @@
+{% extends 'index.html' %}
+
+{% block tittle %} Топ 3 блюда {% endblock %}
+
+{% block content %}
+                Топ 3 блюда:
+  {% for meal in meals %}
+    <h3>{{ meal.1 }} Нажатий: {{ meal.0 }}</h3>
+  {% endfor %}
+{% endblock %}
+
+

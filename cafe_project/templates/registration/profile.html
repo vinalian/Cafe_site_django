@@ -1,0 +1,8 @@
+{% extends 'index.html' %}
+
+{% block tittle %} Профиль {% endblock %}
+
+{% block content %}
+        <h1>Привет {{ user }}</h1>
+        <h2><a href="{% url 'cafe_core_app:menu' %}">Меню</a></h2>
+{% endblock %}

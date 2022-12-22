@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+
+{% block tittle %} График {% endblock %}
+
+  {% block content %}
+    <body>
+    <style>
+       #container {
+        width: 100vw;
+        height: 80vh;
+      }
+    </style>
+    <div id="container">
+    <script src="https://cdn.anychart.com/js/latest/anychart-bundle.min.js"></script>
+    <script>
+      anychart.onDocumentLoad(function() {
+      var chart = anychart.line([
+        {% for data in date %}
+    {x: {{ data.0 }} , value: {{ data.1 }}},
+        {% endfor %}
+  ]);
+  chart.title("График по блюду");
+  chart.container("container").draw();
+});
+    </script>
+    <script>
+    </script>
+      </div>
+    {% endblock %}
+  </body>
+</html>

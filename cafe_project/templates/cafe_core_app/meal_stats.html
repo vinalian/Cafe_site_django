@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+
+{% block tittle %} {{meal.name}} {% endblock %}
+
+{% block content %}
+                Статистика блюда: {{meal.name}}
+                <p><b>Общее количество кликов: </b> {{stats}}</p>
+                    <form action="meal_stats/chart/">
+                    <p><select name="chart">
+                    <option value="1">Час</option>
+                    <option value="2">День</option>
+                </select></p>
+                        <button type="select" >Посмотреть график</button>
+            </form>
+{% endblock %}
+
+

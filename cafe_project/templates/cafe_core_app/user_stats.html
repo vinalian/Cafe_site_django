@@ -1,0 +1,10 @@
+{% extends 'index.html' %}
+
+{% block tittle %} Топ 10 пользователей {% endblock %}
+
+{% block content %}
+                {{ disc }}
+  {% for user in top_users %}
+    <h3>{{ user.1 }} Нажатий: {{ user.0 }}</h3>
+  {% endfor %}
+{% endblock %}

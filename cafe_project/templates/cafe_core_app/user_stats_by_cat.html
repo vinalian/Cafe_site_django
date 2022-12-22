@@ -1,0 +1,12 @@
+{% extends 'index.html' %}
+
+{% block tittle %} Топ пользователей в категории {% endblock %}
+
+{% block content %}
+        Выберите категорю для топ {{ num }} пользователей
+        {% for cat in data %}
+            <h2><a href="{% url 'cafe_core_app:user_stats_by' cat.meal_type num %}">{{cat.meal_type}}</a></h2>
+        {% endfor %}
+{% endblock %}
+
+

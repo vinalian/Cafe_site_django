@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+
+{% block tittle %} Меню {% endblock %}
+
+{% block content %}
+    {% if meal_categories %}
+        {% for category in meal_categories %}
+            <h2><a href="{% url 'cafe_core_app:meal_category' category.0 %}">{{category.0}}</a></h2>
+        {% endfor %}
+            <h2><a href="{% url 'cafe_core_app:stats' %}">Статистика блюд</a></h2>
+            <h2><a href="{% url 'cafe_core_app:user_stats' %}">Статистика пользователей</a></h2>
+            <h2><a href="{% url 'cafe_core_app:select_users_count' %}">Статистика пользователей по категории</a></h2>
+    {% else %}
+        Нету даже категорий блюд
+    {% endif %}
+{% endblock %}
+
